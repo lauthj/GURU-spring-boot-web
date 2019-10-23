@@ -42,5 +42,14 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
         productRepository.save(mug);
 
         log.info("Saved Mug - id:" + mug.getId());
+        
+        Product JoeShirt = new Product();
+        JoeShirt.setDescription("Spring Framework shirt");
+        JoeShirt.setImageUrl("https://springframework.guru/wp-content/uploads/2015/04/spring_framework_guru_coffee_mug-r11e7694903c348e1a667dfd2f1474d95_x7j54_8byvr_512.jpg");
+        JoeShirt.setProductId("5448");
+        JoeShirt.setPrice(new BigDecimal("50.95"));
+        productRepository.save(JoeShirt);
+
+        log.info("Saved shirt - id:" + JoeShirt.getId());
     }
 }
