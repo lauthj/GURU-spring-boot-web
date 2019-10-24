@@ -9,7 +9,12 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-
+/* If you want just the web pages to update and not have this loader overwrite the database and start from scratch:
+ * remove 'spring.jpa.hibernate.ddl-auto=create-drop' from application properties
+ * delete this class from the 'bootstrap' package
+ * I would suggest one run this first before doing the above so you start with 3 records in
+ * the database
+ */
 @Component
 public class ProductLoader implements ApplicationListener<ContextRefreshedEvent> {
 
